@@ -13,15 +13,15 @@ or add `romulodl/ssl` to your `composer.json`. Please check the latest version i
 ## Usage
 
 ```php
-$wae = new Romulodl\Ssl();
-$wae->calculate(array $hlc_values); // [high, low, close]
+$ssl = new Romulodl\Ssl();
+$ssl->calculate(array $hlc_values); // [high, low, close]
 //returns integer (1 for positive channel or -1 for negative channel)
 ```
 
 Example of use:
 ```php
-$wae = new Romulodl\Ssl();
-$wae->calculate([
+$ssl = new Romulodl\Ssl();
+$ssl->calculate([
   [9950.00,9250.66,9786.80],
   [9843.50,9100.00,9310.73],
   [9585.00,9210.03,9374.99],
