@@ -2,33 +2,34 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
-use Romulodl\Ssl;
+use Romulodl\Mfi;
 
-final class SslTest extends TestCase
+final class MfiTest extends TestCase
 {
 	public function testCalculateWithWrongTypeValues(): void
 	{
 		$this->expectException(Exception::class);
 
-		$ssl = new Ssl();
-		$ssl->calculate(['poop']);
+		$mfi = new Mfi();
+		$mfi->calculate(['poop']);
 	}
 
 	public function testCalculateWithEmptyValues(): void
 	{
 		$this->expectException(Exception::class);
 
-		$ssl = new Ssl();
-		$ssl->calculate([]);
+		$mfi = new Mfi();
+		$mfi->calculate([]);
 	}
 
 	public function testCalculateWithValidValues(): void
 	{
-		$values = require(__DIR__ . '/values.php');
+		$val = require(__DIR__ . '/values.php');
+        $values = array_slice($val, -14);
 
-		$ssl = new Ssl();
-		$ssl = $ssl->calculate($values);
+		$mfi = new Mfi();
+		$mfi = $mfi->calculate($values);
 
-		$this->assertSame(-1, $ssl);
+		$this->assertSame(41.56, round($mfi, 2));
 	}
 }
