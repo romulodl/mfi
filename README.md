@@ -1,5 +1,7 @@
 # Money Flow Index
 
+![MFI](https://github.com/romulodl/mfi/workflows/MFI/badge.svg)
+
 Calculate the Money Flow Index (MFI) in pure PHP
 
 ## Instalation
@@ -42,4 +44,4 @@ $mfi->calculate([
 ## Why did you do this?
 
 The PECL Trading extension is crap and not everyone wants to install it.
-I am building a trading bot which will need the SSL value as part of the calculation.
+I am building a trading bot which will need the MFI value as part of the calculation.
